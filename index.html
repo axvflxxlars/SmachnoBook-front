@@ -3,25 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Каталог рецептів SmachnoBook з пошуком за назвою.">
     <title>SmachnoBook — рецепти</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header class="header">
-      <h1>SmachnoBook</h1>
-      <p>Рецепти від користувачів</p>
+      <div class="header-inner">
+        <a class="logo" href="index.html">SmachnoBook</a>
+        <nav id="nav" class="nav">
+        </nav>
+      </div>
     </header>
-
     <main class="container">
+      <h1>Рецепти від користувачів</h1>
+      <p class="hint">Цю сторінку може переглядати будь-хто, навіть без входу.</p>
       <label class="search" for="search">
         Пошук за назвою
         <input id="search" type="search" placeholder="Наприклад, борщ">
       </label>
-
       <p id="status" class="status"></p>
-      <ul id="recipes" class="recipes"></ul>
+      <ul id="recipes" class="recipes">
+      </ul>
     </main>
-
+    <script src="auth.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

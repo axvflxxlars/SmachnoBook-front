@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/api/v1";
+// Публічна сторінка: список рецептів доступний усім
 
 const DIFFICULTY = {
   easy: "легко",
@@ -35,16 +35,20 @@ async function loadRecipes(search = "") {
   setStatus("Завантаження...");
   recipesList.replaceChildren();
 
-  const params = new URLSearchParams({ limit: "50" });
+  const params = new URLSearchParams({
+    limit: "50"
+  });
   if (search) {
     params.set("search", search);
   }
 
   try {
-    const response = await fetch(`${API_URL}/recipes?${params}`);
-    const body = await response.json();
+    const {
+      ok,
+      body
+    } = await apiFetch(`/recipes?${params}`);
 
-    if (!response.ok) {
+    if (!ok) {
       setStatus(body.error || "Не вдалося отримати рецепти.", true);
       return;
     }
@@ -60,6 +64,8 @@ async function loadRecipes(search = "") {
     setStatus("Сервер недоступний. Перевірте, чи запущений бекенд.", true);
   }
 }
+
+renderHeader();
 
 searchInput.addEventListener("input", () => {
   loadRecipes(searchInput.value.trim());

@@ -5,20 +5,104 @@ body {
   background: #faf6f0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+a {
+  color: #c0561f;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* ---------- Шапка ---------- */
+
 .header {
-  padding: 24px;
   color: #fff;
-  text-align: center;
   background: #c0561f;
 }
 
-.header h1 {
-  margin: 0 0 4px;
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 16px;
 }
 
-.header p {
-  margin: 0;
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
 }
+
+.nav {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+}
+
+.nav a {
+  color: #fff;
+}
+
+.account {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+/* ---------- Кнопки ---------- */
+
+button,
+.button {
+  display: inline-block;
+  padding: 9px 16px;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background: #8a3a12;
+  border: 0;
+  border-radius: 6px;
+}
+
+.nav .button {
+  color: #fff;
+}
+
+button:hover,
+.button:hover {
+  background: #6e2d0d;
+}
+
+button.secondary {
+  color: #222;
+  background: #eee;
+}
+
+button.secondary:hover {
+  background: #ddd;
+}
+
+button.danger {
+  margin-top: 10px;
+  background: #b00020;
+}
+
+/* ---------- Сторінка ---------- */
 
 .container {
   max-width: 720px;
@@ -26,21 +110,118 @@ body {
   padding: 24px 16px;
 }
 
+.container.narrow {
+  max-width: 420px;
+}
+
+.hint {
+  color: #666;
+}
+
+.card {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 16px;
+  margin: 0;
+}
+
+.profile dt {
+  color: #666;
+}
+
+.profile dd {
+  margin: 0;
+}
+
+/* ---------- Форми ---------- */
+
 .search {
   display: block;
   margin-bottom: 16px;
   font-weight: bold;
 }
 
-.search input {
+.form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.search input,
+.form input,
+.form select,
+.form textarea {
   display: block;
   box-sizing: border-box;
   width: 100%;
   margin-top: 6px;
   padding: 10px;
+  font-family: inherit;
   font-size: 16px;
+  font-weight: normal;
   border: 1px solid #ccc;
   border-radius: 6px;
+}
+
+.form button[type="submit"] {
+  margin-top: 16px;
+}
+
+.form.inline {
+  display: flex;
+  gap: 8px;
+}
+
+.form.inline input {
+  margin-top: 0;
+}
+
+.form.inline button[type="submit"] {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.row>* {
+  flex: 1;
+}
+
+.ingredients {
+  margin-top: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.ingredient-row {
+  margin-bottom: 8px;
+}
+
+.ingredient-row button {
+  flex: 0 0 auto;
+}
+
+.field-error {
+  min-height: 0;
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #b00020;
 }
 
 .status {
@@ -50,6 +231,8 @@ body {
 .status.error {
   color: #b00020;
 }
+
+/* ---------- Рецепти ---------- */
 
 .recipes {
   padding: 0;
@@ -64,7 +247,13 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.recipe h2 {
+.card .recipe {
+  background: #faf6f0;
+  box-shadow: none;
+}
+
+.recipe h2,
+.recipe h3 {
   margin: 0 0 8px;
   font-size: 20px;
 }
