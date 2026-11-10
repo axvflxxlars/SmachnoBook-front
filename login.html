@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Вхід в акаунт SmachnoBook.">
+    <title>SmachnoBook — вхід</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">SmachnoBook</a>
+        <nav id="nav" class="nav">
+        </nav>
+      </div>
+    </header>
+    <main class="container narrow">
+      <h1>Вхід</h1>
+      <form id="login-form" class="form" novalidate>
+        <label>
+          Ім'я користувача
+          <input name="username" autocomplete="username" maxlength="150" required>
+        </label>
+        <p class="field-error" data-for="username"></p>
+        <label>
+          Пароль
+          <input name="password"
+                 type="password"
+                 autocomplete="current-password"
+                 required>
+        </label>
+        <p class="field-error" data-for="password"></p>
+        <p id="form-error" class="status error"></p>
+        <button type="submit">Увійти</button>
+      </form>
+      <p>Немає акаунта? <a id="register-link" href="register.html">Зареєструватися</a></p>
+    </main>
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>
